@@ -1,0 +1,83 @@
+
+
+.loopPad {
+  background-color: rgb(128, 0, 32);
+  height: 100%;
+  width: 100%;
+  transform: translate(0, 0);
+  box-shadow: inset 0 0 20px 10px #000;
+}
+
+
+.neon2 {
+  font-family: neon;
+  color: #fb4264;
+  font-size: 9vw;
+  line-height: 9vw;
+  text-shadow: 0 0 3vw #f40a35;
+}
+
+.neon {
+  font-family: neon;
+  color: #fb424b;
+  text-shadow: 0 0 1.2rem rgb(206, 204, 204);
+  margin: 1.5%;
+}
+
+.loopPad_container {
+  height: 90%;
+  width: 80%;
+  max-width: 540px;
+  padding: 3px;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title_container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: bisque; */
+  font-size: 23px;
+  margin-bottom: 2px;
+  width: 100%;
+}
+
+.gridPad_container {
+  position: relative;
+  height: 80%;
+  margin: 20px;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+.lowbar_container {
+  display: flex;
+  background-color: rgba(196, 196, 196, 0.3);
+  vertical-align: middle;
+  justify-content: space-around;
+  border-radius: 10px;
+  position: relative;
+  align-items: center;
+  margin: 0 20px 0 20px;
+  height: 10%;
+}
+
+.lowbar_container[recorder-status = "play"] {
+  display: none;
+}
+
+/* Mobile Devices */
+
+@media only screen and (max-width: 414px) {
+  .loopPad_container {
+    width: 100%;
+  }
+}

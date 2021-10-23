@@ -1,0 +1,91 @@
+
+.pad {
+  border:  3px solid #ff5f5f;
+  height: 90%; 
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4em;
+}
+
+.pad:hover {
+  cursor: pointer;
+}
+.pad[status="play"] {
+  background-color: #ff5f5f;
+  border: 3px solid #ff5f5f;}
+
+.pad[status="wait"] {
+
+  padding: 3px;
+  position:relative;
+  outline:none;
+  border: none;
+  box-shadow: none;
+  background-image: 
+  linear-gradient(#f45e61, #f45e61), 
+  linear-gradient(#f45e61, #f45e61), 
+  linear-gradient(#f45e61, #f45e61), 
+  linear-gradient(#f45e61, #f45e61);
+  
+  background-position: 0 0, 0 0, 0 100%, 0 100%;
+  background-size: 3px 0%, 0% 3px, 0% 3px, 3px 0%;
+  background-color:transparent;
+  background-repeat:no-repeat;
+  transition:0.2s linear;
+
+  background-position: 0 100%, 0 0, 0 100%, 100% 0;
+  background-size: 3px 0%, 100% 3px, 0% 3px,3px 0%;
+  animation: animate 1.4s linear infinite 0.2s;
+  
+}
+.pad[status="wait"]:before {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+  padding: 3px;
+  border:3px solid #ce2900;
+}
+
+
+@keyframes animate {
+  0% {
+  background-position: 0 100%, 0 0, 0 100%, 100% 0;
+  background-size: 3px 0%, 100% 3px, 0% 3px,3px 0%;
+  }
+  40% {
+  background-position: 0 100%, 100% 0, 100% 100%, 100% 0;
+  background-size: 3px 0%, 100% 3px, 0% 3px,3px 100%;
+  }
+  60% {
+  background-position: 0 100%, 100% 0, 100% 100%, 100% 100%;
+  background-size: 3px 0%, 0% 3px, 100% 3px,3px 100%
+  }
+  70% {
+  background-position: 0 100%, 100% 0, 0% 100%, 100% 100%;
+  background-size: 3px 100%, 0% 3px, 100% 3px,3px 0%;
+  }
+  80% {
+  background-position: 0% 0%, 0% 0, 0% 100%, 100% 100%;
+  background-size: 3px 100%, 0% 3px, 0% 3px,3px 0%;
+  }
+  100% {
+  background-position: 0% 0%, 0 0, 0 100%, 100% 100%;
+  background-size: 3px 0%, 100% 3px, 0% 3px,3px 0%  
+  }
+}
+
+.neonLabel {
+  font-family: neon;
+  color: #570707;
+  text-shadow: 0 0 3vw #ff5f5f;
+}
+
+
+
+
