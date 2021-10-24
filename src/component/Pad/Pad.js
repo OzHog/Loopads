@@ -1,26 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Pad.css";
 import { PAD_STATUS } from "../../constants";
 
-const getAudioObj = (path) => {
-  const audio = new Audio(path);
-  audio.loop = true;
+const Pad = ({ handleClick, pad, audioPlayer }) => {
+  const [soundID, setSoundID] = useState(null);
 
-  return audio;
-};
+  useEffect(() => {
+    if (pad.status === PAD_STATUS.play) {
+      const newsoundID = audioPlayer.play(pad.label, soundID);
 
-const Pad = ({ handleClick, pad }) => {
-  const [audio] = useState(
-    pad.audioPath ? getAudioObj(pad.audioPath) : undefined
-  );
-
-  if (audio) {
-    if (pad.status === PAD_STATUS.play) audio.play();
-    else {
-      audio.pause();
-      audio.currentTime = 0;
+      setSoundID(newsoundID);
+    } else if (soundID) {
+      audioPlayer.stop(soundID);
+      setSoundID(null);
     }
-  }
+  }, [pad.status, pad.label, audioPlayer]);
 
   return (
     <div
