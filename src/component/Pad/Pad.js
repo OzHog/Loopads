@@ -7,7 +7,7 @@ const Pad = ({ handleClick, pad, audioPlayer }) => {
 
   useEffect(() => {
     if (pad.status === PAD_STATUS.play) {
-      const newsoundID = audioPlayer.play(pad.label, soundID);
+      const newsoundID = audioPlayer.play(pad.label);
 
       setSoundID(newsoundID);
     } else if (soundID) {
