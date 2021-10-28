@@ -117,7 +117,7 @@ const LoopPad = () => {
         </div>
 
         <div recorder-status={recorder.status} className="lowbar_container">
-          <PowerButton power={power} handlePower={handlePower} />
+          <PowerButton power={power} handlePower={handlePower} disable={recorder.status === RECORDER_STATUS.record}/>
           {power && (
             <>
               <Tempo playWaitingPads={playWaitingPads} />
